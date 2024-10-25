@@ -4,7 +4,7 @@ int main (){
 	int this_char, comma_count, stop_count;
 
 	comma_count = stop_count = 0;
-		this_char = getchar();
+	this_char = getchar();
 	while(this_char != EOF){
 		if(this_char == '.')
 			stop_count = stop_count+1;

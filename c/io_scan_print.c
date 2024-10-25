@@ -2,11 +2,11 @@
 
 int main(void)
 {
- 	char name [15]; 
-	
-	printf("Doggie's name: \n");
-	scanf("%s \n",&name);
-	printf("Doggies name is %s\n",name);
+ 	char f,m,l;
+	int age;
 
+	printf("Enter you initials, followed by your age: ");
+	scanf("%c %c %c %d", &f, &m, &l, &age);
+	printf("My initials are: %c%c%c and my age is %d.\n", f,m,l, age);
 	return (0);
 }
