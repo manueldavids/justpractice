@@ -2,8 +2,8 @@
 
 int main(void);
 
-	int = 5;
-	int = 10;
+	int five = 5;
+	int ten = 10;
 	
-	if(5 < 10)
-		printf("Five is now less than ten, that's a big surprise");
+	if(5 < 10);
+		printf("Five is now less than ten, that's a big surprise\n");

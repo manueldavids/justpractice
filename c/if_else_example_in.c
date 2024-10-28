@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	int income = 5000;
+	int income = 11000;
 	float tax;
 
 	printf("Income: %d\n", income);
