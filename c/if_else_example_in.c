@@ -14,6 +14,6 @@ int main(void)
 	else
 {
 	tax = (float)(1000 + (income - 10000) * 15 / 100);
-			printf("tax: %f", tax);
+			printf("tax: %.2f", tax);
 			}
 }
