@@ -7,9 +7,11 @@ api = Api(app)
 
 todos = {}
 
-@api.route('/<string:todo_id>')
+@api.route('/todo/<string:todo_id>')
 class TodosSimple(Resource):
     def get(self, todo_id):
+        if todo_id not in todos:
+            return{'error': 'Todo not found' }, 404
         return {todo_id: todos[todo_id]}
 
     def put(self, todo_id):
