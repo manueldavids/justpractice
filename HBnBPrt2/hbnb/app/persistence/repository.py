@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 class Repository(ABC):
-    @abstracmethod
+    @abstractmethod
     def add(self, obj):
         pass
 
@@ -13,7 +13,7 @@ class Repository(ABC):
     def get_all(self):
         pass
 
-    @abstracmethod
+    @abstractmethod
     def update(self, obj_id, data):
         pass
 
@@ -21,7 +21,7 @@ class Repository(ABC):
     def delete(self, obj_id):
         pass
 
-    @abstracmethod
+    @abstractmethod
     def get_by_attribute(self, attr_name, attr_value):
         pass
 
@@ -36,6 +36,9 @@ class InMemoryRepository(Repository):
 
     def get(self, obj_id):
         return self._storage.get(obj_id)
+    
+    def get_all(self):
+        return list(self._storage.values())
 
     def update(self, obj_id, data):
         obj = self.get(obj_id)
@@ -43,7 +46,7 @@ class InMemoryRepository(Repository):
             obj.update(data)
 
     def delete(self, obj_id):
-        if obj_id in self._storage:
+        if obj_id in self.__storage:
             del self._storage[obj_id]
 
     def get_by_attribute(self, attr_name, attr_value):
