@@ -1,0 +1,28 @@
+# Crear archivo: hbnb/test_repository.py
+from app.persistence.repository import InMemoryRepository
+from app.models import User, Place, Review, Amenity
+
+# Test User Repository
+user_repo = InMemoryRepository()
+user = User("test@example.com", "password123", "John", "Doe")
+user_repo.add(user)
+print("User added:", user_repo.get(user.id) is not None)
+
+# Test Place Repository
+place_repo = InMemoryRepository()
+place = Place("Casa Bonita", "Hermosa casa", 100, user.id)
+place_repo.add(place)
+print("Place added:", place_repo.get(place.id) is not None)
+
+# Test get_all
+all_users = user_repo.get_all()
+print("All users:", len(all_users))
+
+# Test update
+user_repo.update(user.id, {"first_name": "Jane"})
+updated_user = user_repo.get(user.id)
+print("Updated user:", updated_user.first_name)
+
+# Test delete
+user_repo.delete(user.id)
+print("User deleted:", user_repo.get(user.id) is None)
