@@ -46,8 +46,8 @@ class InMemoryRepository(Repository):
             obj.update(data)
 
     def delete(self, obj_id):
-        if obj_id in self.__storage:
+        if obj_id in self._storage:
             del self._storage[obj_id]
 
     def get_by_attribute(self, attr_name, attr_value):
-        return next((obj for obj in self.__storage.values() if getattr(obj, attr_name)== attr_value), None)
+        return next((obj for obj in self._storage.values() if getattr(obj, attr_name)== attr_value), None)
